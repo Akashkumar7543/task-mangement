@@ -1,5 +1,5 @@
 // export const BASE_URL = "http://localhost:5001";
-export const BASE_URL = "https://task-mangement-qyx0.onrender.com"
+export const BASE_URL = "https://task-mangement-23is.onrender.com";
 
 export const API_PATHS = {
     AUTH: {
