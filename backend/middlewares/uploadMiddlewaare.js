@@ -1,14 +1,6 @@
 import multer from "multer";
 
-// storage config
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/"); // folder name
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + "-" + file.originalname);
-    }
-});
+// ✅ use memory storage (works on Render)
+const storage = multer.memoryStorage();
 
-// upload instance
 export const upload = multer({ storage });

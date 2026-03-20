@@ -115,11 +115,13 @@ export const uploadImage = async(req, res) => {
             return res.status(400).json({ message: "No file uploaded" });
         }
 
-        const imgUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+        console.log("File received:", req.file.originalname);
 
+        // TEMP URL (for now)
         res.status(200).json({
-            imgUrl
+            imgUrl: "https://via.placeholder.com/150"
         });
+
     } catch (error) {
         res.status(500).json({
             message: "Upload failed",
