@@ -111,18 +111,19 @@ export const updateProfile = async(req, res) => {
 }
 export const uploadImage = async(req, res) => {
     try {
+        console.log("REQ FILE:", req.file); // 👈 VERY IMPORTANT
+
         if (!req.file) {
             return res.status(400).json({ message: "No file uploaded" });
         }
 
-        console.log("File received:", req.file.originalname);
-
-        // TEMP URL (for now)
         res.status(200).json({
             imgUrl: "https://via.placeholder.com/150"
         });
 
     } catch (error) {
+        console.error("UPLOAD ERROR:", error);
+
         res.status(500).json({
             message: "Upload failed",
             error: error.message

@@ -25,6 +25,7 @@ app.use(cors({
 
 //Middelware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // database Connection
 connectDB();
