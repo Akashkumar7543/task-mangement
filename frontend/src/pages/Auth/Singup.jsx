@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import AuthLayout from "../../components/layout/AuthLayout";
-import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
+// import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
 
 import {Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
@@ -25,7 +25,7 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
 
     e.preventDefault();
-    let profileImgUrl = '';
+    let profileImgUrl = 'https://img.freepik.com/premium-photo/fun-unique-cartoon-profile-picture-that-represents-your-style-personality_1283595-14223.jpg';
 
     if (!fullName) {
       setError("Please enter full name.");
@@ -99,10 +99,10 @@ try {
         </p>
 
         <form onSubmit={handleSignUp}>
-          <ProfilePhotoSelector
+          {/* <ProfilePhotoSelector
             image={profilePic}
             setImage={setProfilePic}
-          />
+          /> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             
